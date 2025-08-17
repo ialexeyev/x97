@@ -1,0 +1,6 @@
+    SKILL UP: APPLICATION GENERAL NOTES:
+
+1. Installed packages:
+    1. flask;
+    2. flask-login;
+    3. flask-sqlalchemy;
