@@ -2,7 +2,7 @@ import sqlite3
 
 #1. Load function (default)
 def load(table, col):
-    conn = sqlite3.connect('prismdb.db')
+    conn = sqlite3.connect('data/prismdb.db')
     prism_cursor = conn.cursor()
     request = "SELECT " + col + " FROM " + table
     prism_cursor.execute(request)
@@ -18,7 +18,7 @@ def loadspec(*args):
         preparation += args[i] + ", "
     expression = preparation[:-2]
     #connecting to database:
-    conn = sqlite3.connect('prismdb.db')
+    conn = sqlite3.connect('data/prismdb.db')
     prism_cursor = conn.cursor()
     request = "SELECT " + expression + " FROM " + args[0]
     prism_cursor.execute(request)
@@ -28,7 +28,7 @@ def loadspec(*args):
 
 #3. Load function (without same values):
 def loadunique(table, col):
-    conn = sqlite3.connect('prismdb.db')
+    conn = sqlite3.connect('data/prismdb.db')
     prism_cursor = conn.cursor()
     request = "SELECT DISTINCT " + col + " FROM " + table
     prism_cursor.execute(request)
@@ -43,7 +43,7 @@ def newuser(nufname,
             nudep, 
             nupos, 
             nusupervisor):
-    conn = sqlite3.connect('prismdb.db')
+    conn = sqlite3.connect('data/prismdb.db')
     prism_cursor = conn.cursor()
     prism_cursor.execute("INSERT INTO tempusers (tufname, tulname, tumail, tudepartment, tusupervisor, tuposition, tustatus ) VALUES (?, ?, ?, ?, ?, ?, ?)", (nufname, nulname, numail, nudep, nusupervisor, nupos, 'new'))
     conn.commit()

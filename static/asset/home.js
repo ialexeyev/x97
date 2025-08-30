@@ -97,10 +97,10 @@ function signUp(firstname,
              err.textContent = ERR_MSG_TXT_REQUEST_SENT; 
              setTimeout(() => {
                document.body.style.opacity = "0";
-             }, "2000");
+             }, "1000");
              setTimeout(() => {
                 window.location.href = "/";
-             }, "3000");
+             }, "2000");
            }
            else if(data == 'NOK'){
              err.style.color = "red";
