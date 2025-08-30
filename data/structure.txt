@@ -1,4 +1,5 @@
 X79 database structure:
 
 1. Main database (general application elements - headers, names, main icons):
-    'base' table([id(int)], [bname(text)], bdata(text)))
+    'base' table([id(int)], [bname(text)], bdata(text)));
+
