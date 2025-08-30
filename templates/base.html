@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel = "stylesheet" href = "../static/stylesheet/main.css"></link>
+      <link rel = "icon" href = "static/icon/app.ico" type = "image/x-icon"></link>
+      {% block stylesheets %}{% endblock %}
+      <title>{% block title %}{% endblock %}</title>
+   </head>
+   <body>
+      <header>
+         <div id = "appheader">
+            <img src = "static/img/appimg.png" id = "appimg" class = "headerElements" alt = "SKILL UP IMG" onclick = "goHome()">
+            <h1 id = "appname" class = "headerElements" onclick = "goHome()">{% print (base[0][2]) %}</h1>
+            <img src = "static/img/htklogo.png" id = "htklogo" class = "headerElements" alt = "HTK logo" onclick = "window.open('https://hyundaiplant.kz/ru/', '_blank')">  
+            <h1 id = "appuser" class = "headerElements">{% print(base[4][2]) %}</h1>
+            <img src = "data:image/png;base64,{% print(base[5][2]) %}" id = "userlogo" class = "headerElements" alt = "User logo" onclick = "displayUserImg(this);">
+         </div>
+      </header>
+      <main>
+         <div id = "appmain">
+            {% block content %}
+            {% endblock %}
+         </div>
+      </main>
+      <footer>
+             <p id = "appfooter">{% print(base[1][2]) %}</p>
+      </footer>
+      {% block scripts %}{% endblock %}
+      <script src = "/static/asset/general.js"></script>
+   </body>
+</html>

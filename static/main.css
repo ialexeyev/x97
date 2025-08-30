@@ -1,0 +1,320 @@
+/* X79 application general styles */
+
+body {
+  font-family: Tahoma, sans-serif;
+  color: #003a84;
+}
+
+@font-face {
+  font-family: "HyundaiSans";
+  src: url("../font/HyundaiHead.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+#appheader {
+  width: 100%;
+  position: relative;
+}
+  .headerElements {
+    display: inline-block;
+  }
+  .headerElements:hover {
+    cursor: pointer;
+  }
+  #appimg {
+    height: 100%;
+  }
+  #appname {
+    position: absolute;
+    font-family: 'HyundaiSans', sans-serif;
+  }
+  #appuser {
+    font-style: italic;
+  }
+  #appuser:hover {
+    text-decoration: underline;
+  }
+  #appuser, #htklogo,
+  #userlogo {
+    float: right;
+  }
+  #userlogo {
+    transition: 0.5s;
+    z-index: 5;
+    position: relative;
+  }
+
+#appmain {
+  width: 100%;
+}
+
+#appfooter {
+  text-align: center;
+  font-style: bold;
+}
+
+.WallBlocks {
+  width: 100%;
+  height: 100%;
+}
+.WallImages {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.FormBlocks {
+  background: white;
+}
+.StandardHeaders {
+  font-family: 'HyundaiSans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Adaptive features */
+/* DESKTOPS (1824px) */
+@media screen and (max-width: 1824px) {
+  body {
+    margin: 0.5vw 1vw 0.7vw 1vw;
+  }
+  #appheader {
+    height: 2.5vw;
+  }
+    #appname {
+      font-size: 1.3vw;
+      margin: 0.7vw 0.5vw;
+    }
+    #appuser {
+      font-size: 1vw;
+      margin: 0.58vw 2vw 0vw 0.5vw;
+    }
+    #htklogo {
+      margin-top: 0.1vw;
+      height: 95%;
+    }
+    #userlogo {
+      margin-top: 0.48vw;
+      height: 60%;
+    }
+
+  #appmain {
+    margin-top: 1vh;
+    height: 86.5vh;
+  }
+
+  #appfooter {
+    font-size: 0.9vw;
+  }
+}
+
+/* LAPTOPS: 1224px */
+@media screen and (max-width: 1224px) {
+  body {
+    margin: 0.5vw 1.2vw 0.5vw 1.2vw;
+  }
+  #appheader {
+    height: 2.8vw;
+  }
+    #appname {
+      font-size: 1.6vw;
+      margin: 0.75vw 0.5vw;
+    }
+    #appuser {
+      font-size: 1.2vw;
+      margin: 0.6vw 2vw 0vw 0.5vw;
+    }
+    #htklogo {
+      margin-top: 0.1vw;
+      height: 95%;
+    }
+    #userlogo {
+      margin-top: 0.5vw;
+      height: 65%;
+    }
+
+  #appmain {
+    margin-top: 1.3vh;
+    height: 86vh;
+  }
+
+  #appfooter {
+    font-size: 1.1vw;
+  }
+}
+
+/* NET LAPTOPS: 1024px */
+@media screen and (max-width: 1024px) {
+  body {
+    margin: 0.4vw 1.3vw 0.4vw 1.3vw;
+  }
+  #appheader {
+    height: 3.3vw;
+  }
+    #appname {
+      font-size: 2vw;
+      margin: 0.7vw 0.4vw;
+    }
+    #appuser {
+      font-size: 1.4vw;
+      margin: 0.6vw 2vw 0vw 0.5vw;
+    }
+    #htklogo {
+      margin-top: 0.2vw;
+      height: 97%;
+    }
+    #userlogo {
+      margin-top: 0.5vw;
+      height: 65%;
+    }
+
+  #appmain {
+    margin-top: 1.3vh;
+    height: 86vh;
+  }
+
+  #appfooter {
+    font-size: 1.2vw;
+  }
+}
+
+/* BIG PADS: 1024px */
+@media screen and (max-width: 1024px) and (min-height: 900px) {
+  body {
+    margin: 0.7vw 1vw 0.7vw 1vw;
+  }
+  #appheader {
+    height: 4.2vw;
+  }
+    #appname {
+      font-size: 2.5vw;
+      margin: 1.1vw 0.4vw;
+    }
+    #appuser {
+      font-size: 1.8vw;
+      margin: 1vw 2vw 0vw 0.9vw;
+    }
+    #htklogo {
+      margin-top: 0.3vw;
+      height: 98%;
+    }
+    #userlogo {
+      margin-top: 0.9vw;
+      height: 70%;
+    }
+
+  #appmain {
+    margin-top: 0.7vh;
+    height: 84vh;
+  }
+
+  #appfooter {
+    font-size: 1.6vw;
+  }
+}
+
+/* PADS: 768px */
+@media screen and (max-width: 768px) {
+  body {
+    margin: 0.5vw 1.3vw 0.5vw 1.3vw;
+  }
+  #appheader {
+    height: 5vw;
+  }
+    #appname {
+      font-size: 3vw;
+      margin: 1.4vw 0.4vw;
+    }
+    #appuser {
+      font-size: 1.95vw;
+      margin: 1.5vw 2vw 0vw 0.8vw;
+    }
+    #htklogo {
+      margin-top: 0.4vw;
+      height: 97%;
+    }
+    #userlogo {
+      margin-top: 1vw;
+      height: 65%;
+    }
+
+  #appmain {
+    margin-top: 1.2vh;
+    height: 95vh;
+  }
+
+  #appfooter {
+    font-size: 1.7vw;
+  }
+}
+
+/* SMARTPHONES: 480px */
+@media screen and (max-width: 480px) {
+  body {
+    margin: 1vw 1.2vw 1vw 1.2vw;
+  }
+  #appheader {
+    height: 8vw;
+  }
+    #appname {
+      font-size: 4.7vw;
+      margin: 2vw 0.3vw;
+    }
+    #appuser {
+      font-size: 3.5vw;
+      margin: 2.4vw 2vw 0vw 1.2vw;
+    }
+    #htklogo {
+      margin-top: 0.7vw;
+      height: 92%;
+    }
+    #userlogo {
+      margin-top: 2vw;
+      height: 62%;
+    }
+
+  #appmain {
+    margin-top: 0.7vh;
+    height: 82vh;
+  }
+
+  #appfooter {
+    font-size: 3vw;
+  }
+}
+
+/* MOBILE 360px */
+@media screen and (max-width: 360px) {
+  body {
+    margin: 1.2vw 1.2vw 1.2vw 1.2vw;
+  }
+  #appheader {
+    height: 8.5vw;
+  }
+    #appname {
+      font-size: 4.8vw;
+      margin: 2.1vw 0.3vw;
+    }
+    #appuser {
+      font-size: 3.4vw;
+      margin: 2.3vw 2.1vw 0vw 0.9vw;
+    }
+    #htklogo {
+      margin-top: 1.4vw;
+      height: 85%;
+    }
+    #userlogo {
+      margin-top: 2.3vw;
+      height: 55%;
+    }
+
+  #appmain {
+    margin-top: 0.6vh;
+    height: 82vh;
+  }
+
+  #appfooter {
+    font-size: 3vw;
+    margin-top: 1vw;
+  }
+}
