@@ -1,0 +1,404 @@
+/* SKILL UP application home page styles */
+
+body {
+  opacity: 0;
+  transition: 1s;
+}
+
+#homeimg, #signinimg,
+#signInFormBlock, 
+#signUpFormBlock {
+  transition: 1s;
+}
+
+#homeimg:hover {
+  cursor: pointer;
+}
+
+#signinimg {
+  transform: rotateY(90deg);
+  display: none;
+}
+
+#signInFormBlock {
+  transform: rotateX(90deg);
+  position: absolute;
+}
+
+#signInFormBlock, 
+#signUpFormBlock {
+  z-index: 1;
+}
+
+.StandardHeaders {
+  font-family: HyundaiSans, sans-serif;
+  text-align: center;
+}
+.SignForms {
+  height: 80%;
+  height: 60%;
+}
+.UserInput {
+  width: 99%;
+  outline: none;
+  border: none;
+  border-bottom: 0.1vw solid #003a84;
+  font-family: HyundaiSans, sans-serif;
+  color: black;  
+}
+.ErrorMessages {
+  color: red;
+  text-align: center;
+  visibility: hidden;
+}
+.FormButtons {
+  display: block;
+  font-family: HyundaiSans, sans-serif;
+  border: none;
+  background:  #003a84;
+  color: white;
+  transition: 0.2s;
+}
+.FormButtons:hover {
+  cursor: pointer;
+}
+.FormButtons:focus {
+  outline: none;
+}
+.FormButtons:hover, 
+.FormButtons:focus {
+  transform: scale(1.1);  
+}
+.FormButtons:active {
+  background: red;
+}
+#signUpLink {
+  font-family: HyundaiSans, sans-serif;
+  font-style: italic;
+  color: #003a84;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+#signUpLink:hover,
+#signUpLink:focus {
+  text-decoration: underline;
+  cursor: pointer;
+}
+#signUpLink:focus {
+  outline: none;
+}
+#signUpLink:active {
+  color: red;
+}
+
+#signUpFormBlock {
+  transform: rotateX(90deg);
+  position: absolute;
+  display: none;
+}
+
+.SignSelects {
+  width: 100%;
+  font-family: HyundaiSans, sans-serif;
+  color: gray;
+  border: none;
+  border-bottom: 0.1vw solid #003a84;
+  cursor: pointer;
+  background: white;
+}
+.SignSelects:focus {
+  outline: none;
+}
+
+
+/* Adaptive features */
+/* DESKTOPS (1824px) */
+/* >1280 px */
+@media screen and (max-width: 1824px) {
+  #signInFormBlock {
+    width: 45vw;
+    height: 44vh;
+    margin: 18.5vh 25vw;
+  }
+  .StandardHeaders {
+    margin-top: 1vw;
+    font-size: 1.3vw;
+  }
+  .SignForms {
+    margin-top: 1.5vw;
+    margin: 1vw 1vw;
+  }
+  .UserInput,
+  .SignSelects {
+    margin: 1.2vw 0vw;
+    height: 2vw;
+    font-size: 1vw;
+  }
+  .ErrorMessages {
+    margin-top: 0.2vw;
+    font-size: 1vw;
+  }
+  .FormButtons {
+    width: 5vw;
+    height: 2.5vw;
+    font-size: 1vw;
+    margin: 0.2vw auto;
+  }
+  #signUpLink {
+    font-size: 1vw; 
+  }
+  #signUpFormBlock {
+    width: 45vw;
+    height: 78vh;
+    margin: 4vh 25vw;
+  }
+}
+
+/* LAPTOPS: 1224px */
+@media screen and (max-width: 1224px) {
+  #signInFormBlock {
+    width: 48vw;
+    height: 50vh;
+    margin: 17.5vh 24.5vw;
+  }
+  .StandardHeaders {
+    margin-top: 1.5vw;
+    font-size: 1.5vw;
+  }
+  .SignForms {
+    margin-top: 1.6vw;
+    margin: 1.1vw 1.1vw;
+  }
+  .UserInput,
+  .SignSelects {
+    margin: 1.6vw 0vw;
+    height: 2.1vw;
+    font-size: 1.2vw;
+  }
+  .ErrorMessages {
+    margin-top: 0.3vw;
+    font-size: 1.2vw;
+  }
+  .FormButtons {
+    width: 7vw;
+    height: 2.7vw;
+    font-size: 1.2vw;
+    margin: 0.3vw auto;
+  }
+  #signUpLink {
+    font-size: 1.2vw; 
+  }
+  #signUpFormBlock {
+    width: 45vw;
+    height: 81vh;
+    margin: 2.6vh 25vw;
+  }
+}
+
+/* NET LAPTOPS: 1024px */
+@media screen and (max-width: 1024px) {
+  #signInFormBlock {
+    width: 50vw;
+    height: 51vh;
+    margin: 16.5vh 24vw;
+  }
+  .StandardHeaders {
+    margin-top: 2vw;
+    font-size: 1.7vw;
+  }
+  .SignForms {
+    margin-top: 1.8vw;
+    margin: 1.3vw 1.3vw;
+  }
+  .UserInput, 
+  .SignSelects {
+    margin: 1.8vw 0vw;
+    height: 2.2vw;
+    font-size: 1.4vw;
+  }
+  .ErrorMessages {
+    margin-top: 0.4vw;
+    font-size: 1.4vw;
+  }
+  .FormButtons {
+    width: 7vw;
+    height: 2.9vw;
+    font-size: 1.4vw;
+    margin: 0.3vw auto;
+  }
+  #signUpLink {
+    font-size: 1.4vw; 
+  }
+  #signUpFormBlock {
+    width: 45vw;
+    height: 86vh;
+    margin: 0vh 25vw;
+  }
+}
+
+/* BIG PADS: 1024px */
+@media screen and (max-width: 1024px) and (min-height: 900px) {
+  #signInFormBlock {
+    width: 70vw;
+    height: 31.5vh;
+    margin: 23.5vh 13.6vw;
+  }
+  .StandardHeaders {
+    margin-top: 3vw;
+    font-size: 2.5vw;
+  }
+  .SignForms {
+    margin-top: 2.5vw;
+    margin: 2vw 1.5vw;
+  }
+  .UserInput, 
+  .SignSelects {
+    margin: 3vw 0vw;
+    height: 3vw;
+    font-size: 2.2vw;
+  }
+  .ErrorMessages {
+    margin-top: 0.4vw;
+    font-size: 2.2vw;
+  }
+  .FormButtons {
+    width: 10vw;
+    height: 5vw;
+    font-size: 2.2vw;
+    margin: 0.4vw auto;
+  }
+  #signUpLink {
+    font-size: 1.9vw; 
+  }
+  #signUpFormBlock {
+    width: 70vw;
+    height: 55vh;
+    margin: 14vh 13.6vw;
+  }
+}
+
+/* PADS: 768px */
+@media screen and (max-width: 768px) {
+  #signInFormBlock {
+    width: 55vw;
+    height: 48vh;
+    margin: 19.5vh 21.5vw;
+  }
+  .StandardHeaders {
+    margin-top: 2.8vw;
+    font-size: 2.8vw;
+  }
+  .SignForms {
+    margin-top: 2.6vw;
+    margin: 1.6vw 1.6vw;
+  }
+  .UserInput, 
+  .SignSelects {
+    margin: 2.6vw 0vw;
+    height: 3.2vw;
+    font-size: 2.2vw;
+  }
+  .ErrorMessages {
+    margin-top: 0.7vw;
+    font-size: 2.2vw;
+  }
+  .FormButtons {
+    width: 12vw;
+    height: 5vw;
+    font-size: 2.2vw;
+    margin: 1.2vw auto;
+  }
+  #signUpLink {
+    font-size: 2.2vw; 
+  }
+  #signUpFormBlock {
+    width: 55vw;
+    height: 76vh;
+    margin: 10vh 20vw;
+  }
+}
+
+/* SMARTPHONES: 480px */
+@media screen and (max-width: 480px) {
+  #signInFormBlock {
+    width: 98vw;
+    height: 38vh;
+    margin: 20vh 0vw;
+  }
+  .StandardHeaders {
+    margin-top: 5vw;
+    font-size: 5vw;
+  }
+  .SignForms {
+    margin-top: 3.5vw;
+    margin: 2vw 1.8vw;
+  }
+  .UserInput, 
+  .SignSelects {
+    margin: 4.5vw 0vw;
+    height: 4.5vw;
+    font-size: 4.5vw;
+  }
+  .ErrorMessages {
+    margin-top: 0.5vw;
+    font-size: 4.5vw;
+  }
+  .FormButtons {
+    width: 21vw;
+    height: 10vw;
+    font-size: 4.5vw;
+    margin: 0.5vw auto;
+  }
+  #signUpLink {
+    font-size: 3.9vw; 
+  }
+  #signUpFormBlock {
+    width: 98vw;
+    height: 64vh;
+    margin: 8vh 0vw;
+  }
+}
+
+/* MOBILE 360px */
+@media screen and (max-width: 360px) {
+  #signInFormBlock {
+    width: 98vw;
+    height: 37vh;
+    margin: 20vh 0vw;
+  }
+  .StandardHeaders {
+    margin-top: 4.5vw;
+    font-size: 4.6vw;
+  }
+  .SignForms {
+    margin-top: 3.2vw;
+    margin: 2vw 0vw;
+  }
+  .UserInput, 
+  .SignSelects {
+    margin: 4.2vw 0vw;
+    height: 4.5vw;
+    font-size: 4.2vw;
+  }
+  .ErrorMessages {
+    margin-top: 1.3vw;
+    font-size: 4.2vw;
+  }
+  .FormButtons {
+    width: 22vw;
+    height: 10vw;
+    font-size: 4.2vw;
+    margin: 1.5vw auto;
+  }
+  #signUpLink {
+    font-size: 4.2vw; 
+  }
+  #signUpFormBlock {
+    width: 98vw;
+    height: 62vh;
+    margin: 9vh 0vw;
+  }
+}

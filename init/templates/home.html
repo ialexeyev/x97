@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+<!-- styles -->
+{% block stylesheets %}
+<link rel = "stylesheet" href = "{{ url_for('static', filename='stylesheet/home.css') }}"></link>
+{% endblock %}
+
+<!-- title -->
+{% block title %}{% print(services[0][3]) %}{% endblock %}
+
+<!-- main content -->
+{% block content %} 
+<div id = "homeBlock" class = "WallBlocks">
+
+  <!-- sign in block -->
+  <div id = "signInFormBlock" class = "FormBlocks">
+    <h2 class = "StandardHeaders">{% print(services[1][3]) %}</h2>
+    <div class = "SignForms" id = "signInForm">
+      <form action = "" method = "post">
+          <input type = "text" class = "UserInput" id = "userID" name = "userID" placeholder = "{% print(services[3][3]) %}" autocomplete="off" onfocus = "clearErrors(this, document.getElementById('signInError'))" title = "{% print(services[3][3]) %}" required>
+          <input type = "password" class = "UserInput" id = "userPsw" name = "userPsw" placeholder = "{% print(services[4][3]) %}" autocomplete="off" onfocus = "clearErrors(this, document.getElementById('signInError'))" title = "{% print(services[4][3]) %}" required>
+          <button type = "button" id = "signUpLink" onclick = "openSignUp(this)">{% print(services[5][3]) %}</button>
+          <h3 class = "ErrorMessages" id = "signInError">{% print(services[7][3]) %}</h3>
+          <button type = "button" class = "FormButtons" id = "signInButton" value = "Start" onclick = "signIn(document.getElementsByName('userID')[0], document.getElementsByName('userPsw')[0], document.getElementById('signInError'))">{% print(services[6][3]) %}</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- sign up block -->
+  <div id = "signUpFormBlock" class = "FormBlocks">
+     <h2 class = "StandardHeaders">{% print(services[2][3]) %}</h2>
+     <div class = "SignForms" id = "signUpForm">
+       <form action = "" method = "post">
+           <input type = "text" class = "UserInput" id = "userFirstName" name = "userFirstName" placeholder = "{% print(services[8][3]) %}" autocomplete="off" onfocus = "clearErrors(this, document.getElementById('signUpError'))" title = "{% print(services[8][3]) %}" required>
+           <input type = "text" class = "UserInput" id = "userLastName" name = "userLastName" placeholder = "{% print(services[9][3]) %}" autocomplete="off" onfocus = "clearErrors(this, document.getElementById('signUpError'))" title = "{% print(services[9][3]) %}" required>
+           <input type = "email" class = "UserInput" id = "userEmail" name = "userEmail" placeholder = "{% print(services[10][3]) %}" autocomplete="off" onfocus = "clearErrors(this, document.getElementById('signUpError'))" title = "{% print(services[10][3]) %}" required>
+           <select class = "SignSelects" name="userDepartment" id = "userDepartment"  placeholder = "{% print(services[11][3]) %}" onfocus = "clearErrors(this, document.getElementById('signUpError'))" title = "{% print(services[11][3]) %}" onclick = "selectChangeColor(this)">
+             <option value="Department" disabled selected>Department</option>
+             {% for dep in departments: %}
+                <option value = "{% print(dep[0]) %}">{% print(dep[0]) %}</option> 
+             {% endfor %}
+           </select>
+           <select class = "SignSelects" name="userPosition" id = "userPosition"  placeholder = "{% print(services[14][3]) %}" onfocus = "clearErrors(this, document.getElementById('signUpError'))" title = "{% print(services[14][3]) %}" onclick = "selectChangeColor(this)">
+              <option value="Position" disabled selected>Position</option>
+              {% for pos in positions: %}
+                 <option value = "{% print(pos[0]) %}">{% print(pos[0]) %}</option>
+              {% endfor %}
+            </select>
+           <select class = "SignSelects" name="userSupervisor" id = "userSupervisor"  placeholder = "{% print(services[12][3]) %}" onfocus = "clearErrors(this, document.getElementById('signUpError'))" title = "{% print(services[12][3]) %}" onclick = "selectChangeColor(this)">
+              <option value="Supervisor" disabled selected>Supervisor</option>
+              {% for sup in supervisors: %}
+                  <option value = "{% print(sup[0]) %}">{% print(sup[0]) %}</option>
+              {% endfor %}
+            </select>
+           <h3 class = "ErrorMessages" id = "signUpError">{% print(services[7][3]) %}</h3>
+           <button type = "button" class = "FormButtons" id = "signUpButton" value = "Submit" onclick = "signUp(document.getElementsByName('userFirstName')[0], document.getElementsByName('userLastName')[0], document.getElementsByName('userEmail')[0], document.getElementsByName('userDepartment')[0], document.getElementsByName('userPosition')[0], document.getElementsByName('userSupervisor')[0], document.getElementById('signUpError'))">{% print(services[13][3]) %}</button>
+       </form>
+     </div>
+  </div> 
+  
+  <img src = "static/img/homeimg.png" id = "homeimg" class = "WallImages" alt = "Home image" title = "CLICK ME TO START" onclick = "appstart(this)">
+   <img src = "static/img/wall.jpg" id = "signinimg" class = "WallImages" alt = "Sign in image" onclick = "";>
+</div>
+{% endblock %}
+
+<!-- scripts -->
+{% block scripts %}
+<script src = "{{ url_for('static', filename='asset/ajx.js') }}"></script>
+<script src = "{{ url_for('static', filename='asset/constants.js') }}"></script>
+<script src = "{{ url_for('static', filename='asset/home.js') }}"></script>
+{% endblock %}

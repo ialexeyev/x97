@@ -1,5 +1,33 @@
 X79 database structure:
 
 1. Main database (general application elements - headers, names, main icons):
-    'base' table([id(int)], [bname(text)], bdata(text)));
+    'base' table([id(int)], [bname(text)], bdata(text))).
 
+2. Serivices: database for requred page elements: loacal headers, buttons, links:
+    'services' table([key(int)], [spagename(text)] [sname(text)], [sdata(text)]).
+
+3. Users: database for application primary users:
+    'users'  table[0 – ‘INTEGER’ – id(PRIMARY KEY)], 
+                  [1 – ‘TEXT’ – uid],               
+                  [2 – ‘TEXT’ – ufname],
+                  [3 – ‘TEXT’ – ulname],
+                  [4 – ‘TEXT’ – umail], 
+                  [5 – ‘TEXT’ – udepartment], 
+                  [6 – ‘TEXT’ usupervisor],
+                  [7 – ‘TEXT’ – uposition], 
+                  [8 – ‘TEXT’ – uaccess], 
+                  [9 – ‘TEXT’ – upassword],
+                  [10 – ‘TEXT’ – uphoto].
+
+4. Temporary users: database for singing up people:
+    'tempusers' table[0 – ‘INTEGER’ – id(PRIMARY KEY)], 
+                     [1 – ‘TEXT’ – tuid],                                             
+                     [2 – ‘TEXT’ – tufname], 
+                     [3 – ‘TEXT’ – tulname],
+                     [4 – ‘TEXT’ – tumail], 
+                     [5 – ‘TEXT’ – tudepartment], 
+                     [6 – ‘TEXT’ tusupervisor],
+                     [7 – ‘TEXT’ – tuposition], 
+                     [8 – ‘TEXT’ – tupassword],
+                     [10 – ‘TEXT’ – tuphoto], 
+                     [11 - 'TEXT' - tustatus (new, approved, rejected)].

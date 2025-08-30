@@ -17,4 +17,5 @@ conn.close()
 3. CHECK ALL TABLES IN THE DATABASE:
 ("SELECT name FROM sqlite_master WHERE type='table';")
 
-4.
+4. INSERT DATA INSIDE THE TABLE IN THE DATABASE:
+("INSERT INTO users (name, age) VALUES (?, ?)", ('Иван', 30))

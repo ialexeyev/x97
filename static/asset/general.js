@@ -1,4 +1,4 @@
-/* X97 application general scripts */
+/* SKILL UP application general scripts */
 
 /* Displaying user image */ 
 function displayUserImg(img) {

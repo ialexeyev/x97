@@ -1,0 +1,10 @@
+/* SKILL UP application main page styles */
+
+body {
+  opacity: 0;
+  transition: 1s;
+}
+
+#mainpageBlock {
+  background: gray;
+}
