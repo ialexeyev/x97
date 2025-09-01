@@ -1,4 +1,4 @@
-from flask import Blueprint, request, redirect, url_for
+from flask import Blueprint, request, redirect, url_for, jsonify
 from flask_login import UserMixin, login_user, logout_user, login_required
 from instance.db import loadspec, newuser
 
@@ -31,8 +31,8 @@ class User(UserMixin):
 # 1. Sign in process
 @models.route('/signinprocess', methods=['POST'])
 def signinprocess():
-  user_id = request.form['userid']
-  password = request.form['userpass']
+  user_id = request.form['userID']
+  password = request.form['userPsw']
   
   # Authenticate user
   user = User.authenticate(user_id, password)
@@ -60,7 +60,7 @@ def logout():
 # 2. Sign up process
 @models.route('/signupprocess', methods=['POST'])
 def signupprocess():
-  if(newuser(request.form['newfname'], request.form['newlname'], request.form['newmail'], request.form['newdep'], request.form['newpos'], request.form['newsup']) == "OK"):
+  if(newuser(request.form['userFirstName'], request.form['userLastName'], request.form['userEmail'], request.form['userDepartment'], request.form['userPosition'], request.form['userSupervisor']) == "OK"):
     return "OK"
   else:
     return "NOK"
