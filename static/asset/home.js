@@ -46,10 +46,13 @@ function signIn(id, passw, err) {
         if(data == 'OK') {
           err.style.color = "#003a84"
           err.textContent = SUCCESS_TXT_MAIN;
-          document.body.style.opacity = "0"; // enter to application workspace
+          document.getElementById('signInFormBlock').style.transform = "rotateX(90deg)";
           setTimeout(() => {
-            window.location.href = "/mainpage";
+            document.body.style.opacity = "0"; 
            }, "1000");
+          setTimeout(() => {
+            window.location.href = "/mainpage";// enter to application workspace
+           }, "1700");
         }
         else if(data == 'ID NOK'){
           err.style.color = "red";
@@ -95,12 +98,13 @@ function signUp(firstname,
          if(data == 'OK') {
              err.style.color = "#003a84"
              err.textContent = ERR_MSG_TXT_REQUEST_SENT; 
+             document.getElementById('signUpFormBlock').style.transform = "rotateX(90deg)";
              setTimeout(() => {
                document.body.style.opacity = "0";
              }, "1000");
              setTimeout(() => {
                 window.location.href = "/";
-             }, "2000");
+             }, "1700");
            }
            else if(data == 'NOK'){
              err.style.color = "red";

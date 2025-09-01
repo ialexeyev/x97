@@ -1,9 +1,10 @@
 import sqlite3
 
-conn = sqlite3.connect('prismdb.db')
+conn = sqlite3.connect('instance/prismdb.db')
 prism_cursor = conn.cursor()
 
 prism_cursor.execute('SELECT * FROM tempusers')
+#prism_cursor.execute("DELETE FROM tempusers WHERE id = 5;")
 #prism_cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
 #prism_cursor.execute("""CREATE TABLE tempusers (
 #   id INTEGER PRIMARY KEY,
