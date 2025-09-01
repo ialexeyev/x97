@@ -1,5 +1,3 @@
 Flask
 Gunicorn
 sqlalchemy
-flask-login
-flask-login
