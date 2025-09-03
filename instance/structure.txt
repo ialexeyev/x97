@@ -31,3 +31,11 @@ X79 database structure:
                      [8 – ‘TEXT’ – tupassword],
                      [10 – ‘TEXT’ – tuphoto], 
                      [11 - 'TEXT' - tustatus (new, approved, rejected)].
+
+5. Dynamic database for checking online users [CONFIDENTIAL S - only for PRIVAC]:
+    'dyn_attendance' table[0 - 'INTEGER' - id(PRIMARY KEY)],
+                          [1 - 'TEXT' - aid],
+                          [2 - 'TEXT' - afname],
+                          [3 - 'TEXT' - alname],
+                          [4 - 'TEXT' - aIP],
+                          [5 - 'TEXT' - current page]
