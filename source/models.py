@@ -34,5 +34,6 @@ def signupprocess():
 def adduserattendance():
   ipUS = attendanceadd(request.form['auser']);
   print(ipUS)
+  ipUSER = request.remote_addr
   # NEED TO ADD USER TO ATTENDANCE TABLE
-  return ipUS
+  return ipUSER

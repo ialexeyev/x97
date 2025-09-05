@@ -1,5 +1,4 @@
 import sqlite3
-import socket
 
 
 #1. Load function (default)
@@ -66,13 +65,5 @@ def attendanceadd(aid):
     #print(afname)
     #print(alname)
     # 2. Define user ip adress
-    hostname = socket.gethostname()
-    ip_address = socket.gethostbyname(hostname)
-    output = 'HOST: ' + hostname + ';  IP: ' + ip_address;
-    return output;
-    #prism_cursor.execute(
-   #     "INSERT INTO attendance (aid) VALUES (?)",
-   #     (aid))
-   # conn.commit()
-   # conn.close()
-    return "OK"
+    output = "OK"
+    return output
