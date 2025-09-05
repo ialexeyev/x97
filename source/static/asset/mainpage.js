@@ -5,8 +5,8 @@ window.onload = () => {
 }
 
 setInterval(() => {
-    //console.log('hey');
-}, 1000); // Every second
+    console.log('hey');
+}, 6000); // Every minute
 
 window.onbeforeunload = () => {
   console.log('bye')

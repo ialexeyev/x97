@@ -1,4 +1,5 @@
 import sqlite3
+import socket
 
 
 #1. Load function (default)
@@ -49,4 +50,29 @@ def newuser(nufname, nulname, numail, nudep, nupos, nusupervisor):
         (nufname, nulname, numail, nudep, nusupervisor, nupos, 'new'))
     conn.commit()
     conn.close()
+    return "OK"
+
+#5. Add user to attendance (PRIVAC);
+def attendanceadd(aid):
+    conn = sqlite3.connect('instance/prismdb.db')
+    prism_cursor = conn.cursor()
+    # 1. Select first name and last name from users according to id
+    prism_cursor.execute("SELECT ufname, ulname FROM users WHERE uid = ?", (aid,))
+    dataName = prism_cursor.fetchall()
+    afname = dataName[0][0];
+    alname = dataName[0][1];
+    conn.close()
+    #print(aid)
+    #print(afname)
+    #print(alname)
+    # 2. Define user ip adress
+    hostname = socket.gethostname()
+    ip_address = socket.gethostbyname(hostname)
+    output = 'HOST: ' + hostname + ';  IP: ' + ip_address;
+    return output;
+    #prism_cursor.execute(
+   #     "INSERT INTO attendance (aid) VALUES (?)",
+   #     (aid))
+   # conn.commit()
+   # conn.close()
     return "OK"

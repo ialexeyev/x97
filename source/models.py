@@ -1,5 +1,5 @@
 from flask import Blueprint, request
-from instance.db import loadspec, newuser
+from instance.db import loadspec, newuser, attendanceadd
 
 models = Blueprint('models', __name__)
 
@@ -28,3 +28,11 @@ def signupprocess():
     return "OK"
   else:
     return "NOK"
+
+# Adding user to attendance process
+@models.route('/adduserattendance', methods=['POST'])
+def adduserattendance():
+  ipUS = attendanceadd(request.form['auser']);
+  print(ipUS)
+  # NEED TO ADD USER TO ATTENDANCE TABLE
+  return ipUS

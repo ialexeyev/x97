@@ -44,18 +44,9 @@ function signIn(id, passw, err) {
       })
       .done(function(data) {
         if(data == 'OK') {
-          err.style.color = "#003a84"
-          err.textContent = SUCCESS_TXT_MAIN;
-          setTimeout(() => {
-            document.getElementById('signInFormBlock').style.transform = "rotateX(90deg)";
-           }, "500");
-          setTimeout(() => {
-            document.body.style.opacity = "0"; // enter to application workspace
-           }, "1500");
-          setTimeout(() => {
-            window.location.href = "/mainpage";
-           }, "2000");
-        }
+            attend(id.value, document.getElementById('signInError')); // Add user to attendance
+            return;
+          }
         else if(data == 'ID NOK'){
           err.style.color = "red";
           err.textContent = ERR_MSG_TXT_NO_USER;
@@ -271,6 +262,42 @@ function checkSignUp(firstname,
     synchro(errObj);
     return true;
   } 
+}
+
+
+/* Add user information to attendance table (PRIVAC) */
+function attend(userid, err) {
+  user_attendance = 'A';
+  $.ajax({
+    data : {auser : userid},
+    type : 'POST',
+    url : '/adduserattendance'
+    })
+    .done(function(data) {
+      console.log(data);
+      if(data == 'OK') {
+        err.style.color = "#003a84"
+        err.textContent = SUCCESS_TXT_MAIN;
+        setTimeout(() => {
+          document.getElementById('signInFormBlock').style.transform = "rotateX(90deg)";
+         }, "500");
+        setTimeout(() => {
+          document.body.style.opacity = "0"; // enter to application workspace
+         }, "1500");
+        setTimeout(() => {
+          window.location.href = "/mainpage";
+         }, "2000");
+      }
+      else if(data == 'NOK') {
+          err.style.color = "red";
+          err.textContent = ERR_MSG_TXT_DYN_DATABASE_CONN;
+      }
+      else {
+          err.style.color = "red";
+          err.textContent = ERR_MSG_TXT_DYN_SERV_CONN;
+      }
+  });
+  
 }
 
 
